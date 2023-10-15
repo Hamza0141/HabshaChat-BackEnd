@@ -4,7 +4,7 @@ const app = express()
 require("dotenv").config();
 const cors = require("cors");
 const cookiParser = require("cookie-parser");
-const port = process.env.PORT
+const port = process.env.PORT||80;
 const userRoute = require("./api/routes/user")
 const relationships = require("./api/routes/relationship");
 const postRoute = require("./api/routes/post");
