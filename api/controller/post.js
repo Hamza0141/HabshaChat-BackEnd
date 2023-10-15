@@ -58,9 +58,9 @@ const getPost = async (req, res) => {
       } else {
         // Determine the friends and followers of the current user
         const friendsQuery =
-          "SELECT followed_user_id FROM relationships WHERE followers_user_id = ?";
+          "SELECT followed_user_id FROM relationShips WHERE followers_user_id = ?";
         const followersQuery =
-          "SELECT followers_user_id FROM relationships WHERE followed_user_id = ?";
+          "SELECT followers_user_id FROM relationShips WHERE followed_user_id = ?";
 
         const [friendsResult] = await pool.query(friendsQuery, [userInfo.id]);
         const [followersResult] = await pool.query(followersQuery, [
