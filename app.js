@@ -27,7 +27,6 @@ app.use(cors(corsOptions));
 app.use(cookiParser());
 app.use(express.json())
 
-
 app.use(sanitize.middleware);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
@@ -47,7 +46,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-app.use("/uploads", express.static("../HabeshaChat-FrontEnd/public/upload")); // This line tells Express to serve files from the "/uploads" URL path and map them to the actual upload directory.
+app.use("/uploads", express.static("../HabeshaChat-FrontEnd/public/upload")); // This line tells Express to serve files from the "/uploads" URL path and map them to the actual upload .
 
 app.post("/api/upload", upload.single("file"), (req, res) => {
   const file = req.file
