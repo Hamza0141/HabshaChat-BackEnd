@@ -23,7 +23,8 @@ const corsOptions = {
   origin: process.env.FRONTEND_URL,
   optionsSuccessStatus: 200,
 };
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));https://habesha-chat.pages.dev/
+app.use(cors("https://habesha-chat.pages.dev/"))
 app.use(cookiParser());
 app.use(express.json())
 
