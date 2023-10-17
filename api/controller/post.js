@@ -40,7 +40,7 @@ const getPost = async (req, res) => {
   try {
     const user_id = req.query.user_id;
     const token = req.cookies.accessToken;
-
+     console.log("user_id:", user_id);
     if (!token) return res.status(401).json("not logged in");
 
     jwt.verify(token, jwtSecreat, async (err, userInfo) => {
