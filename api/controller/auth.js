@@ -52,6 +52,8 @@ const login = async (req, res) => {
         return res.status(404).json("Wrong password or username!");
       }
       const token = jwt.sign({ id: row[0].id }, jwtSecreat);
+      console.log(token);
+         console.log(jwtSecreat);
       const { password, ...others } = row[0];
       console.log(others);
       res
@@ -60,6 +62,7 @@ const login = async (req, res) => {
         })
         .status(200)
         .json(others);
+
     }
   } catch (err) {
     return res.status(500).json("server error");
