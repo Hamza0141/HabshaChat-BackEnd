@@ -74,7 +74,7 @@ const logout = async (req, res) => {
     .clearCookie("accessToken", {
       secure: true,
       sameSite: "none",
-    domain: "http://localhost:3000/",
+
     })
     .status(200)
     .json("user loged out");
