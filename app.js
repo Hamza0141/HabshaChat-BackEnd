@@ -20,7 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: "https://habesha-chat.pages.dev/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
