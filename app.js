@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 const corsOptions = {
-  origin: "http://localhost:3000", // Remove the trailing slash
+  origin: "https://hbesha-chat.pages.dev", // Remove the trailing slash
   optionsSuccessStatus: 200,
   credentials: true, // Allow credentials (cookies) to be sent with the request
 };
