@@ -19,10 +19,10 @@ const sanitize = require("sanitize");
 //   res.header("Access-Control-Allow-Credentials", true)
 //   next()
 // })
-// const corsOptions = {
-//   origin: process.env.FRONTEND_URL,
-//   optionsSuccessStatus: 200,
-// };
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  optionsSuccessStatus: 200,
+};
 app.use(cors());
 app.use(cookiParser());
 app.use(express.json())
