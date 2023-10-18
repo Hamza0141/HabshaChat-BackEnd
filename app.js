@@ -19,10 +19,13 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true);
   next();
 });
+
 const corsOptions = {
-  origin: "https://habesha-chat.pages.dev/",
+  origin: "https://habesha-chat.pages.dev", // Remove the trailing slash
   optionsSuccessStatus: 200,
+  credentials: true, // Allow credentials (cookies) to be sent with the request
 };
+
 app.use(cors(corsOptions));
 app.use(cookiParser());
 app.use(express.json())
