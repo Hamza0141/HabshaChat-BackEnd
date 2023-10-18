@@ -58,8 +58,8 @@ const login = async (req, res) => {
         .cookie("accessToken", token, {
           httpOnly: true,
         })
-        .status(200)
-        .json(others);
+        res.setHeader("Set-Cookie", `accessToken=${token}; HttpOnly; Path=/; Secure; SameSite=None`);
+      return res.status(200).json(others);
 
     }
   } catch (err) {
@@ -72,7 +72,7 @@ const logout = async (req, res) => {
     .clearCookie("accessToken", {
       secure: true,
       sameSite: "none",
-    domain: "http://localhost:3000/",
+      domain: "https://habesha-chat.pages.dev",
     })
     .status(200)
     .json("user loged out");
