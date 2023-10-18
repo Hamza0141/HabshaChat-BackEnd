@@ -53,9 +53,7 @@ const login = async (req, res) => {
       }
       const token = jwt.sign({ id: row[0].id }, jwtSecreat);
       console.log(token);
-         console.log(jwtSecreat);
       const { password, ...others } = row[0];
-      console.log(others);
       res
         .cookie("accessToken", token, {
           httpOnly: true,

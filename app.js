@@ -15,15 +15,15 @@ const messagesRoute = require("./api/routes/message")
 const multer = require("multer");
 const sanitize = require("sanitize");
 
-app.use((req,res,next)=>{
-  res.header("Access-Control-Allow-Credentials", true)
-  next()
-})
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+// app.use((req,res,next)=>{
+//   res.header("Access-Control-Allow-Credentials", true)
+//   next()
+// })
+// const corsOptions = {
+//   origin: process.env.FRONTEND_URL,
+//   optionsSuccessStatus: 200,
+// };
+app.use(cors());
 app.use(cookiParser());
 app.use(express.json())
 
