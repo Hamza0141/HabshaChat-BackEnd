@@ -41,7 +41,7 @@ app.use("/api/messages", messagesRoute);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../HabeshaChat-FrontEnd/public/upload");
+    cb(null, "https://hbesha-chat.pages.dev/build/upload");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
@@ -49,7 +49,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-app.use("/uploads", express.static("../HabeshaChat-FrontEnd/public/upload")); // This line tells Express to serve files from the "/uploads" URL path and map them to the actual upload .
+app.use(
+  "/uploads",
+  express.static("https://hbesha-chat.pages.dev/build/upload")
+); // This line tells Express to serve files from the "/uploads" URL path and map them to the actual upload .
 
 app.post("/api/upload", upload.single("file"), (req, res) => {
   const file = req.file
